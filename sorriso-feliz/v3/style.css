@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Century Gothic', 'Arial', 'Helvetica', 'sans-serif', 'Times New Roman', Times, serif ;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+}
+
+.home {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+
+
+header{
+    background-color: aliceblue;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    z-index: 999;
+}
+
+.menu nav a{
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #99c33d;
+}
+
+.container-nav{
+    margin-top: 1%;
+    font-size: 140%;
+    max-width: 1000px;   
+    display: flex;
+    margin-left: 2rem;
+}
+
+#winicio, #wservicos, #wsobrenos, #wprofissionais, #wcontato {
+    transition: 0.5s;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 4px;
+    border-color: #99c33d;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#winicio:hover, #wservicos:hover, #wsobrenos:hover, #wprofissionais:hover, #wcontato:hover{
+    color:  #00AEEF;
+    border-color: #00AEEF;
+}
+
+#logo {
+    margin-left: 35px;
+}
+
+#mainph {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-fit: contain;
+}
+
+#home h1 {
+    margin-top: 25px;
+    align-items: center;
+}
+
+#segundalogo {
+    display: block;
+    height: 193px;
+    position: absolute;
+    top: 27%;
+    left: 62%;
+    width: 537px;
+    max-width: 80%;
+
+
+}
+
+#descricao {
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+    padding: .7%;
+    position: absolute;
+    width: 535px;
+    left: 62%;
+    top: 48%;
+}
+
+#agenda {
+    display: flex;
+    background-color: #99c33d;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    text-align: center;
+    border: 0px;
+    color: white;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    left: 77%;
+    top: 65%;
+    width: 235px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+#servico {
+    display: block;
+    font-size: 350%;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 60px;
+    margin-left: 187px;
+    margin-bottom: 20px;
+    color: #99c33d;
+}
+
+#limpezaF, #clareamentoF, #restauracaoF, #implanteF {
+    position: absolute;
+    width: 700px;
+    height: 250px;
+}
+
+#limpezaF {
+    background-color: #99c33d;
+    left: 10%;
+}
+
+#restauracaoF {
+    left: 50%;
+    top: 125%;
+}
+
+#clareamentoF {
+    top: 160%;
+    margin-bottom: 500px;
+    left: 10%;
+}
+
+#implanteF {
+    left: 50%;
+    top:160%;
+
+}
+
+#limpeza, #clareamento, #restauracao, #implante {
+    height: 100px;
+}
+
+#profissionais {
+    margin-top: 800px;
+}
+
+input, :placeholder-shown {
+    border-width: 1px;
+    display: block;
+}
+
+footer {
+    background-color: #99c33d;
+    margin: 10px 0 0;
+    font-size: 110%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 15px ;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+#direitos {
+    margin: 15px;
+}
+
+#logofim {
+    height: 170px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorriso Feliz - Clínica Odontologica</title>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="sorrisoFeliz.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="sorrisoLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="sorrisoMiniLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="sorrisoCadeira.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <header>
+        <img width="400" height="116" src="sorrisoLogo.png" id="logo"/>
+        <div class="container-nav">
+        <div class="menu">
+            <nav>
+                <a id="winicio" href="#home">Página Inicial</a>
+                <a id="wservicos" href="#servicos">Serviços Oferecidos</a>
+                <a id="wprofissionais" href="#profissionais">Nossos profissionais</a>
+                <a id="wsobrenos" href="#sobrenos">Sobre Nós</a>
+                <a id="wcontato" href="#contato">Contato</a>
+            </nav>
+        </div>
+    </div>
+    </header>
+    <section id="home">
+        <img src="sorrisoFeliz.png" id="mainph">
+        <img src="sorrisoCima2.png" id="segundalogo">
+        <p id="descricao">Na Sorriso Feliz, oferecemos os melhores tratamentos odontológicos, sempre com foco na sua saúde, bem-estar e autoestima. Nossa equipe é formada por profissionais experientes e apaixonados, prontos para atender você e sua família com todo o carinho que merecem.</p>
+        <button id="agenda">Agende sua consulta.</button>
+    </section>
+
+    <section id="servicos">
+        <div>
+            <h1 id="servico">NOSSOS SERVIÇOS</h1>
+            <ul>
+                <il>
+                    <fieldset id="limpezaF">
+                    <h3>Limpeza e Prevenção</h3>
+                    <p>Cuide da saúde bucal com consultas regulares, profilaxia profissional e orientações de higiene personalizadas.</p>
+                    <img src="limpeza.png" id="limpeza">
+                    </fieldset>
+                </il>
+                <il>
+                    <fieldset id="clareamentoF">
+                    <h3>Clareamento Dental</h3>
+                    <p>Recupere o brilho natural dos seus dentes com técnicas seguras e eficazes de clareamento a laser ou caseiro.</p>
+                    <img src="clareameno.png" id="clareamento">
+                    </fieldset>
+                </il>
+                <il>
+                    <fieldset id="restauracaoF">
+                    <h3>Restaurações Estéticas</h3>
+                    <p>Devolva a forma e a beleza do seu sorriso com materiais modernos e resistentes, que se integram perfeitamente aos dentes naturais.</p>
+                    <img src="restauracao.png" id="restauracao">
+                    </fieldset>
+                </il>
+                <il>
+                    <fieldset id="implanteF">
+                    <h3>Implantes Dentários</h3>
+                    <p>Recupere a confiança ao sorrir com implantes seguros, confortáveis e com aparência natural</p>
+                    <img src="implante.png" id="implante">
+                    </fieldset>
+                </il>
+            </ul>
+        </div>
+    </section>
+
+    <section id="profissionais">
+        <fieldset>
+            <h2>Nossa equipe</h2>
+            <ul>
+                <il>
+                    <h3>Dr. Kauã Nascimento – Especialista em Ortodontia</h3>
+                    <p>Apaixonado por transformar sorrisos, o Dr. Patrício é responsável pelos tratamentos ortodônticos da clínica. Com ampla experiência no uso de aparelhos convencionais e estéticos, ele alia técnica e cuidado para alinhar dentes e elevar a autoestima de seus pacientes.</p>
+                </il>
+                <il>
+                    <h3>Dr. Pedro Henrique – Cirurgião-Dentista e Clínico Geral</h3>
+                    <p>O Dr. Henrique é conhecido pelo seu atendimento atencioso e pela excelência nos procedimentos clínicos e estéticos. Atua em restaurações, limpezas, clareamentos e demais cuidados preventivos, sempre com foco em resultados naturais e duradouros.</p>
+                </il>
+                <il>
+                    <h3>Dr. Nicolas Consoli – Especialista em Implantes e Prótese Dentária</h3>
+                    <p>Com vasta experiência em reabilitação oral, o Dr. Consoli devolve o conforto e a confiança de sorrir. É especialista em implantes dentários e próteses, garantindo soluções modernas e seguras para cada paciente.</p>
+                </il>
+            </ul>
+        </fieldset>
+    </section>
+
+    <section id="sobrenos">
+        <fieldset>
+            <h1>Nossas Informações</h1>
+            <img src="sorrisoCadeira.png">
+            <article class="contato">
+                <p class="contato">Email: contato@sorrrisofeliz.com</p>
+            <article class="Telefone">
+                <p class="contato">Telefone: (12) 3625-4154</p>
+            <article class="contato">
+                <p class="contato">Endereço: 110, R. Daniel Daneli, 100 - Centro, Taubaté - SP, 12060-440</p>
+        </fieldset>
+    </section>
+
+    <section id="contato">
+        <fieldset>
+            <h1>Contato</h1>
+            <p>Estamos à disposição para atender suas necessidades odontológicas. Entre em contato pelo telefone, WhatsApp ou e-mail e agende sua consulta!</p>
+            <label for="first-name">Nome: </label><input id="first-name" name="first-name" type="text" required /></label>
+            <label for="last-name">Sobrenome: </label><input id="last-name" name="last-name" type="text" required /></label>
+            <label for="email">Seu Email: <input id="email" name="email" type="email" required /></label>
+            <label for="tel">Número de Telefone: <input id="tel" name="tel" type="tel" required /></label>
+            <label for="message">Deixe aqui sua mensagem: 
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Gostaria agendar uma consulta"></textarea>
+            </label>
+            <input type="submit" value="Enviar"/>
+        </fieldset> 
+    </section>
+</body>
+<footer>
+    <div id="footer-copyright">
+      <img id="logofim" src="sorrisoLogo.png">
+      <p>Seu sorriso em boas mãos!</p> 
+      <p id="direitos" >© 2024 Todos os direitos são reservados</p>
+    </div>
+</footer>
+</html>
