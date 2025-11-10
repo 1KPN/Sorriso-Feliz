@@ -1,0 +1,537 @@
+Tem toda a razão. A culpa é minha.
+
+A sua lógica está 100% correta. Ao mover o id="sobrenos" do <fieldset> para a <section> (para corrigir o link do menu), as nossas regras de CSS (display: flex;, gap: 40px;, etc.) que estavam ligadas a esse ID "subiram" para a <section>.
+
+O <fieldset> (que contém o texto e a imagem) perdeu todo o seu estilo e voltou ao padrão do navegador (provavelmente display: block;), que é o que fez o seu layout "sumir" e ficar um em cima do outro.
+
+A Solução (Apenas no CSS):
+
+Vou pegar no seu style.css (o que me enviou da última vez) e fazer duas pequenas correções de seletor:
+
+Vou mudar o seletor #sobrenos (que agora se aplica à secção) para #sobrenos fieldset (para se aplicar ao conteúdo).
+
+Vou fazer o mesmo no código de telemóvel (@media).
+
+Vou adicionar a regra section:has(#sobrenos) (que você já tinha) para garantir que a secção continua com as margens corretas. (EDITAR: Na verdade, vou simplificar. Vou aplicar as margens ao #sobrenos (a secção) e o flex ao #sobrenos fieldset).
+
+Aqui está o style.css completo e corrigido, como texto simples.
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 170px;
+}
+
+header{
+    background-color: aliceblue;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    z-index: 999;
+}
+
+.menu nav a{
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #99c33d;
+}
+
+.container-nav{
+    margin-top: 1%;
+    font-size: 140%;
+    max-width: 1000px;   
+    display: flex;
+    margin-left: 2rem;
+}
+
+#winicio, #wservicos, #wsobrenos, #wprofissionais, #wcontato {
+    transition: 0.5s;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 4px;
+    border-color: #99c33d;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#winicio:hover, #wservicos:hover, #wsobrenos:hover, #wprofissionais:hover, #wcontato:hover{
+    color:  #00AEEF;
+    border-color: #00AEEF;
+}
+
+#logo {
+    margin-left: 35px;
+}
+
+#home {
+    position: relative;
+    width: 100%;
+}
+
+#mainph {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#segundalogo {
+    position: absolute;
+    top: 27%;
+    left: 62%;
+    width: 30%;
+    max-width: 537px;
+    height: auto;
+}
+
+#descricao {
+    position: absolute;
+    top: 48%;
+    left: 62%;
+    width: 30%;
+    max-width: 535px;
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#agenda {
+    position: absolute;
+    top: 65%;
+    left: 62%;
+    display: flex;
+    background-color: #99c33d;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    border: 0px;
+    color: white;
+    align-items: center;
+    padding: 15px;
+    width: auto;
+    max-width: 235px;
+    height: 45px;
+    justify-content: center;
+}
+
+#titulos {
+    display: block;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #99c33d;
+    text-transform: uppercase;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 20px auto;
+    text-align: left;
+}
+
+#titulo {
+    color:#99c33d;
+    font-family: 'Century';
+    font-size: 175%;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+#servicos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+#servicos ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    list-style: none;
+}
+
+#servicos li {
+    background-color: aliceblue;
+    padding: 24px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#limpezaF, #clareamentoF, #restauracaoF, #implanteF {
+    border-width: 0px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+
+#descricao1 {
+    font-size: 125%;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#limpeza, #clareamento, #restauracao, #implante {
+    height: 130px;
+    width: auto;
+    display: block;
+    margin: 15px auto 0;
+}
+
+#profissionais {
+    margin-top: 80px;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#profissionais ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+#profissionais li {
+    flex-basis: 30%;
+    min-width: 280px;
+    flex-grow: 1;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+#drN, #drH, #drC {
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+#nascimentoImg, #henriqueImg, #consoliImg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#nascimento, #henrique, #consoli {
+    text-align: center;
+    width: 100%;
+    color: #99c33d;
+    font-family: 'Century';
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+#nascimento1, #henrique1, #consoli1 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+#sobrenos {
+     margin-top: 80px;
+     width: 90%;
+     max-width: 1200px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#sobrenos fieldset {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border: none;
+    color: #333;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+#texto {
+    flex: 1;
+    min-width: 300px;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    height: auto;
+    margin-top: 0;
+}
+
+#cadeira {
+    flex: 0.8;
+    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#contato {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    font-family: century, serif;
+}
+
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+}
+
+#contatos {
+    border: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px 10px;
+    align-items: center;
+}
+
+p#desc {
+    grid-column: 1 / -1;
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+#contatos label {
+    font-family: Arial, sans-serif;
+    color: #99c33d;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+#contatos input[type="text"],
+#contatos input[type="email"],
+#contatos input[type="tel"],
+#contatos textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+#label-textarea {
+    grid-column: 1 / -1;
+    align-self: auto;
+    padding-top: 0;
+}
+
+#message {
+    grid-column: 1 / -1;
+}
+
+#contatos input[type="submit"] {
+    grid-column: 2 / 3;
+    justify-self: start;
+    background-color: #99c33d;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contatos input[type="submit"]:hover {
+    background-color: #7fa130;}
+
+.contato-info {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item img {
+    width: 40px;
+    height: auto;
+}
+
+#mapa {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    
+    header {
+        position: static;
+        flex-direction: column;
+        padding: 15px;
+        height: auto;
+    }
+
+    #logo {
+        margin-left: 0;
+        max-width: 250px;
+        margin-bottom: 15px;
+        height: auto;
+    }
+    
+    .container-nav {
+        margin: 0;
+        width: 100%;
+    }
+
+    .menu nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .menu nav a {
+        margin-left: 0;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+    }
+    
+    #titulos {
+        font-size: 2rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #home {
+        text-align: center;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    #mainph {
+        display: none;
+    }
+    #segundalogo, #descricao, #agenda {
+        position: static;
+        width: 90%;
+        max-width: 540px;
+        margin: 20px auto 0 auto;
+        left: auto;
+        top: auto;
+        height: auto;
+    }
+    #segundalogo {
+        margin-top: 0;
+    }
+
+    #servicos ul {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    #contatos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #contatos label {
+        text-align: left;
+        margin-bottom: -5px;
+    }
+
+    #contatos label,
+    #contatos input[type="text"],
+    #contatos input[type="email"],
+    #contatos input[type="tel"],
+    #contatos textarea,
+    #contatos input[type="submit"],
+    #label-textarea,
+    #message {
+        grid-column: 1 / -1;
+    }
+
+    #contatos input[type="submit"] {
+        width: 100%;
+    }
+    
+    #profissionais li {
+        flex-basis: 100%;
+    }
+    
+    #sobrenos fieldset {
+        flex-direction: column;
+    }
+}
+
+#desc {
+    color: black;
+}
+
+input, :placeholder-shown {
+    border-width: 1px;
+    display: block;
+}
+
+footer {
+    background-color: #b2d65d;
+    margin: 100px 0 0;
+    font-size: 110%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 15px ;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+#direitos {
+    margin: 15px;
+}
+
+#logofim {
+    height: 170px;
+    margin-bottom: 5px;
+}
